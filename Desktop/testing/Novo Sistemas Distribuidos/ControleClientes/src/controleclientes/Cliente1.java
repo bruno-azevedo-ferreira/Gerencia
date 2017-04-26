@@ -10,14 +10,14 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
-public class Cliente {
+public class Cliente1 {
 	public boolean valida=true;
 	Socket sok=null;
 DataInputStream in=null;
 DataOutputStream ou=null;
         public int porta;
         public String ip;
-	public Cliente(String ip, int porta){
+	public Cliente1(String ip, int porta){
             this.porta=porta;
             this.ip=ip;
 		try {
