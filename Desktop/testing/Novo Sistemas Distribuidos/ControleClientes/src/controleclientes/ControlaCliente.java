@@ -18,7 +18,7 @@ public class ControlaCliente {
     int porta = 3314;
     int porta2 = 3313;
     boolean continua = true;
-    Cliente1 cli;
+    Cliente cli;
     Cliente cli2;
 
     public ControlaCliente() {
@@ -50,7 +50,7 @@ public class ControlaCliente {
         public void run() {
             while (continua) {
 
-                Cliente1 cliL = new Cliente1(ipg, portag);
+                Cliente cliL = new Cliente(ipg, portag);
                 if (cliL.valida) {
                     new usoDeDadosGeral(cliL).start();
                     System.out.println("Cliente Conectado " + portag + " " + ipg);
@@ -72,10 +72,10 @@ public class ControlaCliente {
 
     class usoDeDadosGeral extends Thread {
 
-        Cliente1 clig = null;
+        Cliente clig = null;
         int contL=0;
 
-        public usoDeDadosGeral(Cliente1 clig) {
+        public usoDeDadosGeral(Cliente clig) {
             this.clig = clig;
             contL = contE++;
         }
@@ -129,11 +129,11 @@ public class ControlaCliente {
         public void run() {
             while (continua) {
                 if (cli == null) {
-                    cli = new Cliente1(ip, portal);
+                    cli = new Cliente(ip, portal);
                     System.out.println("Cliente Conectado " + portal);
                 }
                 if (cli2 == null) {
-                    cli2 = new Cliente1(ip2, porta2);
+                    cli2 = new Cliente(ip2, porta2);
                     System.out.println("Cliente Conectado " + porta2);
                 }
 
